@@ -18,7 +18,7 @@ Each layer dynamically decides:
 
 This allows richer information flow compared to standard residual connections.
 
-Hyper-Connections extend this idea by adding learnable parameters for $n$ residual streams that act like gates deciding which information to pass from the previous layer (similar to hidden states in LSTMs). Mathematically, a simple static hyper  connection that does not depend on the input is:
+Hyper-Connections extend the idea of residual connections by adding learnable parameters for $n$ residual streams that act like gates deciding which information to pass from the previous layer (similar to hidden states in LSTMs). Mathematically, a simple static hyper  connection that does not depend on the input is:
 
 Given input $\mathbf{x}_l \in \mathbb{R}^{n \times d}$ at layer $l$ where $n$ is the expansion rate and $d$ is input dimension:
 
