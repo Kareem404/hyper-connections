@@ -260,10 +260,10 @@ class GPT(nn.Module):
 
         # apply transformers
         for layer in self.transformers:
-            H = layer(H) # [b, T, d_model] 
+            H = layer(H) # [b, T, n, d_model] 
 
         if self.hc:
-            H = H.view(b, T, self.n, self.d_model) # [b, T, n, d_model]
+            H = H.view(b, T, self.n, self.d_model) # [b, T, n, d_model] (not needed)
             H = H.sum(dim=2) # [b, T, d_model]
         else:
             H = self.layer_norm(H)
