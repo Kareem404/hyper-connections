@@ -1,0 +1,15 @@
+model:
+  seq_len: 64
+  d_model: 128
+  n_layers: 4
+  num_heads: 4
+  dropout: 0.1
+  hc: true
+  expansion_rate: 4
+
+training:
+  steps: 400000
+  batch_size: 32
+  lr: 3e-4
+  val_interval: 400
+  val_iters: 100

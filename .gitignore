@@ -1,0 +1,6 @@
+data/
+.venv/
+models_gpt/
+__pycache__/
+tiny_shakespeare.txt
+notebooks/
