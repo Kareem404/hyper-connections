@@ -4,9 +4,9 @@ A minimal implementation of mHC proposed by deepseek in January 2026 for attenti
 ## 1. What are Hyper-Connections?
 Hyper-Connections are an extension of typical Residual Connections given by:
 
-$$x_{l+1} = x_l + F^i(x_l)$$
+$$x_{l+1} = x_l + F_l(x_l)$$
 
-where $`F^i`$ is the $`i-th`$ layer.
+where $`F_l`$ is the $`l-th`$ layer.
 
 ### Intuition
 
