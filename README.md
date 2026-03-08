@@ -44,10 +44,13 @@ This approach is called Dyanmic Hyper Connections (DHC). In Dynamic Hyper-Connec
 Deepseek builds on top of this idea to make DHCs more stable by making $H_l^{res}$ doubly stochastic using the sinkhorn-knopp algorithm and by applying a sigmoid activation for both $H_l^{pre}$ and $H_l^{post}$. We can represent them by:
 
 $$x_l = reshape(x_l)$$
+
 where $x_l \in \mathbb{R}^{1 \times n*d}$
+
 $$H_l^{pre} = \sigma(\alpha_l^{pre} (\theta_l^{pre} x_l^T) +b_l^{pre})$$
 $$H_l^{post} = 2 \times \sigma(\alpha_l^{post} (\theta_l^{post} x_l^T) +b_l^{post})$$
 $$H_l^{res} = \text{sinkhorn-knopp}(\alpha_l^{res} reshape(\theta_l^{res} x_l^T) +b_l^{res})$$
+
 where $\theta_l^{res} x_l^T \in \mathbb{R}^{n \times n}$
 
 ## 2. Usage
