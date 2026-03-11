@@ -23,7 +23,7 @@ Hyper-Connections extend the idea of residual connections by adding learnable pa
 Given input $\mathbf{x}_l \in \mathbb{R}^{n \times d}$ at layer $l$ where $n$ is the expansion rate and $d$ is input dimension:
 
 $$x_l^{pre} = H_l^{pre}x_l \in \mathbb{R}^{1 \times d}$$
-$$z_l = H_l^{post}F^i(x_l^{pre}) \in \mathbb{R}^{n \times d}$$
+$$z_l = H_l^{post}F_l(x_l^{pre}) \in \mathbb{R}^{n \times d}$$
 $$h_l = H_l^{res}x_l \in \mathbb{R}^{n \times d}$$
 $$x_{l+1}=h_l+z_l$$
 
