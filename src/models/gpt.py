@@ -237,7 +237,7 @@ class GPT(nn.Module):
                 )
             )
         
-        self.layer_norm = nn.LayerNorm(d_model) if not self.hc else nn.Identity()
+        self.layer_norm = nn.LayerNorm(d_model)
 
     def forward(self, x):
         """
@@ -262,11 +262,8 @@ class GPT(nn.Module):
         for layer in self.transformers:
             H = layer(H) # [b, T, n, d_model] 
 
-        if self.hc:
-            H = H.view(b, T, self.n, self.d_model) # [b, T, n, d_model] (not needed)
-            H = H.sum(dim=2) # [b, T, d_model]
-        else:
-            H = self.layer_norm(H)
+        H = H.sum(dim=2) if self.hc else H
+        H = self.layer_norm(H)
 
         E = self.token_embd.weight # [V, d_model]
 
