@@ -260,9 +260,9 @@ class GPT(nn.Module):
 
         # apply transformers
         for layer in self.transformers:
-            H = layer(H) # [b, T, n, d_model] 
+            H = layer(H) # [b, T, n, d_model] if hc else [b, T, d_model]
 
-        H = H.sum(dim=2) if self.hc else H
+        H = H.sum(dim=2) if self.hc else H # [b, T, d_model]
         H = self.layer_norm(H)
 
         E = self.token_embd.weight # [V, d_model]
