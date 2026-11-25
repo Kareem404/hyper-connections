@@ -96,7 +96,7 @@ If you want to wrap your own attention or MLP layers with mHC, import `mhc_attn`
 For `mhc_attn`, the input tensor must include the **stream dimension `n`**.
 
 Use this code snippet for reference:-
-```
+```python
 class TransformerBlock():
     def __init__()
         ...
